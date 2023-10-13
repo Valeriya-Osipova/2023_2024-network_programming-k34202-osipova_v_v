@@ -43,7 +43,7 @@ remoteip 172.16.0.2-254
 ```
 sudo vim /etc/pptpd.conf
 ```
-<img width="358" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/9691cbbf-98c2-4bb3-97d2-eb939cfd6398"> \
+<img width="358" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/9691cbbf-98c2-4bb3-97d2-eb939cfd6398">
 
 localip – ip адрес из выбранной подсети, который будет являться локальным шлюзом для клиентов VPN.\
 remoteip – пул ip адресов для раздачи клиентам VPN. \
