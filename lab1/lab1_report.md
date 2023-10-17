@@ -24,10 +24,11 @@ Date of finished:
 ### Ход работы
 #### 1. Развертывание виртуальной машины.
 Для создания виртуальной машины, где будет находится VPN сервер была выбрана платформа Яндекс.Облако. На ней была создана вм с Ubuntu 22.
-<img width="913" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/618bca49-c5f5-459e-b02f-1aa17e5123e8"> \
+<img width="913" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/030c2b01-c579-45c1-a114-69d57b0e7ecb">
+
 Получаем публичный ip адрес, переходим в консоль и подключаемся к созданной виртуальной машине с помощью команды 
 ```
-ssh admin@158.160.77.48
+ssh admin@62.84.120.115
 ```
 #### 2. Установка python3 и Ansible
 Для установки python3 пишем команду
@@ -87,7 +88,16 @@ service pptpd restart
 Загруженный файл открываем в VirtualBox и запускаем машину.
 
 На виртуальном роутере меняем пароль. И выводим ip адрес с помощью команды `ip address print`.
-<img width="251" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/0ed2c87e-871e-4b51-b359-63246b123034">
+<img width="227" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/faebf35e-3514-4de6-8531-7ec642fe55a4">
 
-В браузере открываем страницу c ip адресом CHR
+
+В браузере открываем страницу c ip адресом CHR \
+Выполняем авторизацию admin/admin
+![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/a2c81ce5-5b7a-4d1e-a417-f41793c47a33)
+
+Переходим в WebFig и создаем новое подключение: 
+
+<img width="385" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/c63ed208-54f1-49af-a172-d17c7ca87fe7">
+
+
 
