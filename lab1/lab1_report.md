@@ -93,20 +93,21 @@ service pptpd restart
 
 На виртуальном роутере меняем пароль. И выводим ip адрес с помощью команды `ip address print`.
 
-<img width="227" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/faebf35e-3514-4de6-8531-7ec642fe55a4">
+<img width="350" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/8b5e2354-1637-4f66-b75f-c176d277c98e">
 
 
 В браузере открываем страницу c ip адресом CHR \
 Выполняем авторизацию admin/admin
 
-![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/a2c81ce5-5b7a-4d1e-a417-f41793c47a33)
+<img width="500" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/73669c0d-077b-45e6-9c61-443f8346dadc">
+
 
 Переходим в WebFig и создаем новое подключение:
 
 Connect to: ip адрес виртуалки
 user/password: user1/password1
 
-<img width="215" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/5475faf0-8a19-4517-bc09-56e19dcdcdc7">
+<img width="250" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/5475faf0-8a19-4517-bc09-56e19dcdcdc7">
 
 Получаем local и remote ip-адрес 192.168.0.2 / 192.168.0.1
 
@@ -114,6 +115,6 @@ user/password: user1/password1
 
 Переходим в терминал и входим в sudo su. Делаем пинг на адрес роутера: 192.168.0.2
 
-<img width="350" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/7855d21e-cb52-4770-886f-f4af22233102">
+<img width="400" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/7855d21e-cb52-4770-886f-f4af22233102">
 
 
