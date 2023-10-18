@@ -47,14 +47,15 @@ apt-get install ppp pptpd
 ```
 Раскомментируем строки 
 
-localip 192.168.2.1 \
-remoteip 192.168.2.234-238,192.168.2.245
+localip 192.168.0.1 \
+remoteip 192.168.0.2-200
 
 В файлике /etc/pptpd.conf в помощью команды:
 ```
 sudo vim /etc/pptpd.conf
 ```
-<img width="358" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/9691cbbf-98c2-4bb3-97d2-eb939cfd6398">
+![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/6bd0edcc-0edc-447a-a233-eb49e96cb322)
+
 
 localip – ip адрес из выбранной подсети, который будет являться локальным шлюзом для клиентов VPN.\
 remoteip – пул ip адресов для раздачи клиентам VPN.
@@ -103,5 +104,7 @@ service pptpd restart
 
 <img width="385" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/c63ed208-54f1-49af-a172-d17c7ca87fe7">
 
+
+![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/cda53bf7-5ef3-4b15-9ad0-24464c58ca13)
 
 
