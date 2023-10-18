@@ -91,23 +91,16 @@ service pptpd restart
 
 Загруженный файл открываем в VirtualBox и запускаем машину.
 
-На виртуальном роутере меняем пароль. И выводим ip адрес с помощью команды `ip address print`.
+Заходим в WinBox и определяем адрем роутера. Подключаемся к нему для дальнейшей настройки.
 
-<img width="350" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/8b5e2354-1637-4f66-b75f-c176d277c98e">
+<img width="487" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/f8e59a36-7e4d-4123-85ac-6a7e9dfa260f">
 
-
-В браузере открываем страницу c ip адресом CHR \
-Выполняем авторизацию admin/admin
-
-<img width="500" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/73669c0d-077b-45e6-9c61-443f8346dadc">
-
-
-Переходим в WebFig и создаем новое подключение:
+Настраиваем подключение роутера:
 
 Connect to: ip адрес виртуалки
 user/password: user1/password1
 
-<img width="250" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/5475faf0-8a19-4517-bc09-56e19dcdcdc7">
+<img width="542" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/109ecd80-9a85-4b21-9d8c-ec81bc85fd26">
 
 Получаем local и remote ip-адрес 192.168.0.2 / 192.168.0.1
 
