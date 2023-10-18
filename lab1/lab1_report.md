@@ -87,7 +87,7 @@ service pptpd restart
 #### 4. Установка CHR
 Для установки виртуального роутера переходим на сайт `https://mikrotik.com/download` и скачиваем образ.
 
-<img width="396" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/b2b47710-b435-469f-b41b-68a90b8dcb10">
+<img width="396" align="center" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/b2b47710-b435-469f-b41b-68a90b8dcb10">
 
 Загруженный файл открываем в VirtualBox и запускаем машину.
 
