@@ -24,6 +24,7 @@ Date of finished:
 ### Ход работы
 #### 1. Развертывание виртуальной машины.
 Для создания виртуальной машины, где будет находится VPN сервер была выбрана платформа Яндекс.Облако. На ней была создана вм с Ubuntu 22.
+
 <img width="913" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/030c2b01-c579-45c1-a114-69d57b0e7ecb">
 
 Получаем публичный ip адрес, переходим в консоль и подключаемся к созданной виртуальной машине с помощью команды 
@@ -83,16 +84,19 @@ service pptpd restart
 ```
 #### 4. Установка CHR
 Для установки виртуального роутера переходим на сайт `https://mikrotik.com/download` и скачиваем образ.
+
 <img width="396" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/b2b47710-b435-469f-b41b-68a90b8dcb10">
 
 Загруженный файл открываем в VirtualBox и запускаем машину.
 
 На виртуальном роутере меняем пароль. И выводим ip адрес с помощью команды `ip address print`.
+
 <img width="227" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/faebf35e-3514-4de6-8531-7ec642fe55a4">
 
 
 В браузере открываем страницу c ip адресом CHR \
 Выполняем авторизацию admin/admin
+
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/a2c81ce5-5b7a-4d1e-a417-f41793c47a33)
 
 Переходим в WebFig и создаем новое подключение: 
