@@ -102,11 +102,13 @@ user/password: user1/password1
 
 <img width="542" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/109ecd80-9a85-4b21-9d8c-ec81bc85fd26">
 
+<img width="333" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/d8887e45-eef0-4649-855f-1451b877ad16">
+
 Получаем local и remote ip-адрес 192.168.0.2 / 192.168.0.1
 
 #### 5. Ping роутера
 
-Переходим в терминал и входим в sudo su. Делаем пинг на адрес роутера: 192.168.0.2
+Переходим в терминал и делаем пинг на адрес роутера: 192.168.0.2
 
 <img width="400" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/7855d21e-cb52-4770-886f-f4af22233102">
 
