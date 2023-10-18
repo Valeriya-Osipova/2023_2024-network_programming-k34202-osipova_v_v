@@ -45,15 +45,17 @@ sudo pip3 install ansible-pylibssh
 ```
 apt-get install ppp pptpd
 ```
-Раскомментируем строки 
 
-localip 192.168.0.1 \
+В файлике `/etc/pptpd.conf` добавим строки
+```
+localip 192.168.0.1
 remoteip 192.168.0.2-200
+```
 
-В файлике `/etc/pptpd.conf` в помощью команды:
-```
-sudo vim /etc/pptpd.conf
-```
+`localip` – ip адрес из выбранной подсети, который будет являться локальным шлюзом для клиентов VPN.
+
+`remoteip` – пул ip адресов для раздачи клиентам VPN.
+
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/6bd0edcc-0edc-447a-a233-eb49e96cb322)
 
 
