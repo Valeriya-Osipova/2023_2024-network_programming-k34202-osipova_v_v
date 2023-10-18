@@ -100,11 +100,19 @@ service pptpd restart
 
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/a2c81ce5-5b7a-4d1e-a417-f41793c47a33)
 
-Переходим в WebFig и создаем новое подключение: 
+Переходим в WebFig и создаем новое подключение:
 
-<img width="385" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/c63ed208-54f1-49af-a172-d17c7ca87fe7">
+Connect to: ip адрес виртуалки
+user/password: user1/password1
 
+<img width="191" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/5475faf0-8a19-4517-bc09-56e19dcdcdc7">
 
-![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/cda53bf7-5ef3-4b15-9ad0-24464c58ca13)
+Получаем local и remote ip-адрес 192.168.0.2 / 192.168.0.1
+
+#### 5. Ping роутера
+
+Переходим в терминал и входим в sudo su. Делаем пинг на адрес роутера: 192.168.0.2
+
+<img width="243" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/7855d21e-cb52-4770-886f-f4af22233102">
 
 
