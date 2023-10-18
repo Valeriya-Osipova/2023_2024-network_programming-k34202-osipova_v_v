@@ -58,10 +58,6 @@ remoteip 192.168.0.2-200
 
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/6bd0edcc-0edc-447a-a233-eb49e96cb322)
 
-
-localip – ip адрес из выбранной подсети, который будет являться локальным шлюзом для клиентов VPN.\
-remoteip – пул ip адресов для раздачи клиентам VPN.
-
 Также раскомментируем строку `net.ipv4.ip_forward=1` в файле `/etc/sysctl.conf`
 
 В файл `/etc/ppp/pptpd-options` добавляем строки: 
