@@ -50,7 +50,7 @@ apt-get install ppp pptpd
 localip 192.168.0.1 \
 remoteip 192.168.0.2-200
 
-В файлике /etc/pptpd.conf в помощью команды:
+В файлике `/etc/pptpd.conf` в помощью команды:
 ```
 sudo vim /etc/pptpd.conf
 ```
@@ -60,8 +60,9 @@ sudo vim /etc/pptpd.conf
 localip – ip адрес из выбранной подсети, который будет являться локальным шлюзом для клиентов VPN.\
 remoteip – пул ip адресов для раздачи клиентам VPN.
 
-Также раскомментируем строку `net.ipv4.ip_forward=1` в файле /etc/sysctl.conf \
-В файл /etc/ppp/pptpd-options добавляем строки: 
+Также раскомментируем строку `net.ipv4.ip_forward=1` в файле `/etc/sysctl.conf`
+
+В файл `/etc/ppp/pptpd-options` добавляем строки: 
 ```
 mtu 1400
 mru 1400
@@ -75,7 +76,7 @@ iptables -A INPUT -p gre -j ACCEPT
 iptables -A INPUT -m tcp -p tcp --dport 1723 -j ACCEPT
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 ```
-Добавляем пользователя для подключения к VPN серверу в файле /etc/ppp/chap-secrets
+Добавляем пользователя для подключения к VPN серверу в файле `/etc/ppp/chap-secrets`
 ```
 user1	pptpd	password1	"*"
 ```
@@ -105,7 +106,7 @@ service pptpd restart
 Connect to: ip адрес виртуалки
 user/password: user1/password1
 
-<img width="191" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/5475faf0-8a19-4517-bc09-56e19dcdcdc7">
+<img width="215" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/5475faf0-8a19-4517-bc09-56e19dcdcdc7">
 
 Получаем local и remote ip-адрес 192.168.0.2 / 192.168.0.1
 
@@ -113,6 +114,6 @@ user/password: user1/password1
 
 Переходим в терминал и входим в sudo su. Делаем пинг на адрес роутера: 192.168.0.2
 
-<img width="243" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/7855d21e-cb52-4770-886f-f4af22233102">
+<img width="350" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/7855d21e-cb52-4770-886f-f4af22233102">
 
 
