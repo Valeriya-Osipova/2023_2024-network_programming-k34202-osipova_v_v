@@ -16,7 +16,7 @@ Lab: Lab1
 
 Date of create: 11.10.2023
 
-Date of finished: 
+Date of finished: 18.10.2023
 
 ### Цель работы
 Целью данной работы является развертывание виртуальной машины на базе платформы Microsoft Azure с установленной системой контроля конфигураций Ansible и установка CHR в VirtualBox
