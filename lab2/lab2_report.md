@@ -16,7 +16,7 @@ Lab: Lab2
 
 Date of create: 02.11.2023
 
-Date of finished: 
+Date of finished: 07.11.2023
 
 ### Цель работы
 С помощью Ansible настроить несколько сетевых устройств и собрать информацию о них. Правильно собрать файл Inventory.
@@ -169,7 +169,7 @@ valery@net-prog:~$ ansible-playbook -i inventory play.yml >> res.txt
 
 #### 8. Проверка связанности роутеров
 
-<img width="478" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/d8cac383-f432-43b5-96e7-1c0a53030ccb">
+<img width="550" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/d8cac383-f432-43b5-96e7-1c0a53030ccb">
 
 
 Пинг chr2 с chr1
