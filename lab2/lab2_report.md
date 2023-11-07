@@ -23,7 +23,7 @@ Date of finished:
 
 ### Ход работы
 
-#### Создадим сертификаты для второго роутера
+#### Создание сертификатов для второго роутера
 ```console
 valery@net-prog:/etc/openvpn/easy-rsa$ sudo ./easyrsa gen-req chr2 nopass
 valery@net-prog:/etc/openvpn/easy-rsa$ sudo ./easyrsa sign-req client chr2
@@ -31,7 +31,7 @@ valery@net-prog:/etc/openvpn/easy-rsa$ sudo cp ./pki/private/chr2.key /etc/openv
 valery@net-prog:/etc/openvpn/easy-rsa$ sudo cp ./pki/issued/chr2.crt /etc/openvpn/certs/
 ```
 
-#### Импортируем сертификаты
+#### Импорт сертификатов
 ```console
 [admin@MikroTik] > certificate import file-name=ca.crt 
 passphrase: *** 
@@ -58,12 +58,12 @@ passphrase: ***
   keys-with-no-certificate: 0
 ```
 
-#### Добавим OpenVPN соединение
+#### Добавление OpenVPN соединения
 ```console
 [admin@MikroTik] > /interface ovpn-client add certificate=chr2.crt_0 cipher=aes256 connect-to=51.250.47.204 mac-address=02:66:F6:83:E0:77 name=ovpn-out1 port=993 user=admin
 ```
 
-#### Создадим файл inventory
+#### Создание файла inventory
 ```conf
 [routers]
 chr1 ansible_host=10.8.0.6 rid=10.10.1.1
@@ -76,7 +76,7 @@ ansible_user=admin
 ansible_ssh_pass=admin
 ```
 
-#### Получим ифромацию о хостах
+#### Получение ифромации о хостах
 ```console
 valery@net-prog:~$ ansible-inventory --list -i inventory
 {
@@ -116,19 +116,8 @@ valery@net-prog:~$ ansible-inventory --list -i inventory
 ```
 
 #### Выполним пинг 
-```console
-valery@net-prog:~$ ansible -m ping all -i inventory
-chr1 | SUCCESS => {
-    "changed": false,
-    "ping": "pong"
-}
-chr2 | SUCCESS => {
-    "changed": false,
-    "ping": "pong"
-}
-```
-![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/399e76b8-ea73-4498-8336-59123914252f)
 
+![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/399e76b8-ea73-4498-8336-59123914252f)
 
 #### Конфигурационный файл для playbook
 
@@ -178,30 +167,17 @@ chr2 | SUCCESS => {
 valery@net-prog:~$ ansible-playbook -i inventory play.yml >> res.txt
 ```
 
-#### Проверим связанность роутеров и схема
+#### Проверка связанности роутеров
+
 <img width="478" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/d8cac383-f432-43b5-96e7-1c0a53030ccb">
 
 
-Пинганем chr2 с chr1
-```console
-[admin@MikroTik] > ping 10.10.1.2
-  SEQ HOST                                     SIZE TTL TIME  STATUS
-    0 10.10.1.2                                  56  64 1ms
-    1 10.10.1.2                                  56  64 2ms
-    sent=2 received=2 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=2ms
-```
+Пинг chr2 с chr1
+
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/5b4db887-a9c0-49fa-88e4-3b7ef28a3f0c)
 
+Пинг chr1 с chr2
 
-Пинганем chr1 с chr2
-```console
-[admin@MikroTik] > ping 10.10.1.1
-  SEQ HOST                                     SIZE TTL TIME  STATUS
-    0 10.10.1.1                                  56  64 1ms
-    1 10.10.1.1                                  56  64 1ms
-    2 10.10.1.1                                  56  64 1ms
-    sent=3 received=3 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=1ms
-```
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/8f79c106-059f-4e6b-b3e7-08fef104b836)
 
 #### Вывод
