@@ -127,6 +127,8 @@ chr2 | SUCCESS => {
     "ping": "pong"
 }
 ```
+![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/399e76b8-ea73-4498-8336-59123914252f)
+
 
 #### Конфигурационный файл для playbook
 
@@ -177,7 +179,8 @@ valery@net-prog:~$ ansible-playbook -i inventory play.yml >> res.txt
 ```
 
 #### Проверим связанность роутеров и схема
-// Тут схемка
+<img width="478" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/d8cac383-f432-43b5-96e7-1c0a53030ccb">
+
 
 Пинганем chr2 с chr1
 ```console
