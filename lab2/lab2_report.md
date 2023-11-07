@@ -23,7 +23,7 @@ Date of finished:
 
 ### Ход работы
 
-#### Создание сертификатов для второго роутера
+#### 1. Создание сертификатов для второго роутера
 ```console
 valery@net-prog:/etc/openvpn/easy-rsa$ sudo ./easyrsa gen-req chr2 nopass
 valery@net-prog:/etc/openvpn/easy-rsa$ sudo ./easyrsa sign-req client chr2
@@ -31,7 +31,7 @@ valery@net-prog:/etc/openvpn/easy-rsa$ sudo cp ./pki/private/chr2.key /etc/openv
 valery@net-prog:/etc/openvpn/easy-rsa$ sudo cp ./pki/issued/chr2.crt /etc/openvpn/certs/
 ```
 
-#### Импорт сертификатов
+#### 2. Импорт сертификатов
 ```console
 [admin@MikroTik] > certificate import file-name=ca.crt 
 passphrase: *** 
@@ -58,12 +58,12 @@ passphrase: ***
   keys-with-no-certificate: 0
 ```
 
-#### Добавление OpenVPN соединения
+#### 3. Добавление OpenVPN соединения
 ```console
 [admin@MikroTik] > /interface ovpn-client add certificate=chr2.crt_0 cipher=aes256 connect-to=51.250.47.204 mac-address=02:66:F6:83:E0:77 name=ovpn-out1 port=993 user=admin
 ```
 
-#### Создание файла inventory
+#### 4. Создание файла inventory
 ```conf
 [routers]
 chr1 ansible_host=10.8.0.6 rid=10.10.1.1
@@ -76,7 +76,7 @@ ansible_user=admin
 ansible_ssh_pass=admin
 ```
 
-#### Получение ифромации о хостах
+#### 5. Получение ифромации о хостах
 ```console
 valery@net-prog:~$ ansible-inventory --list -i inventory
 {
@@ -115,11 +115,11 @@ valery@net-prog:~$ ansible-inventory --list -i inventory
 }
 ```
 
-#### Выполним пинг 
+#### 6. Выполним пинг 
 
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/399e76b8-ea73-4498-8336-59123914252f)
 
-#### Конфигурационный файл для playbook
+#### 7. Конфигурационный файл для playbook
 
 ```yml
 - name: Configure
@@ -167,7 +167,7 @@ valery@net-prog:~$ ansible-inventory --list -i inventory
 valery@net-prog:~$ ansible-playbook -i inventory play.yml >> res.txt
 ```
 
-#### Проверка связанности роутеров
+#### 8. Проверка связанности роутеров
 
 <img width="478" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/d8cac383-f432-43b5-96e7-1c0a53030ccb">
 
@@ -180,5 +180,5 @@ valery@net-prog:~$ ansible-playbook -i inventory play.yml >> res.txt
 
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/8f79c106-059f-4e6b-b3e7-08fef104b836)
 
-#### Вывод
-
+#### 9. Вывод
+В результате выполнения данной лабораторной работы удалось ознакомиться с системой управления конфигурацией Ansible, использующаяся для автоматизации настройки и развертывания программного обеспечения. С помощью Ansible были настроены несколько сетевых устройств, также была собрана информация о них. Был собран файл Inventory.
