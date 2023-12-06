@@ -106,11 +106,14 @@ Cоздадим Playbook для изменения имени пользоват
 ```
 Запускаем playbook и в каждом роутере выведим ip адреса:
 Добавлен интерфейс Lo1 с ip-адресом.
-<img width="218" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/fdf05904-e17f-4617-a635-4d4059cad0a0">
-<img width="236" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/82f10e77-ee7b-4353-a3a5-ed346a5f456c">
+
+<img width="350" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/fdf05904-e17f-4617-a635-4d4059cad0a0">
+
+<img width="350" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/82f10e77-ee7b-4353-a3a5-ed346a5f456c">
 
 Проверим ping до виртуальной машины:
-<img width="324" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/833f4903-3ccb-4f95-89d4-e78dc40b9c49">
+
+<img width="400" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/833f4903-3ccb-4f95-89d4-e78dc40b9c49">
 
 Cоздадим Playbook для получения серийного номера CHR и установки его в профиль Netbox
 ```
