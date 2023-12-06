@@ -48,7 +48,7 @@ sudo apt-get install -y redis-server
 
 Сгенирируем секретный ключ с помощью библиотеки python
 
-![Screenshot from 2023-12-05 19-50-12](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/ea4941fc-b386-4941-9d3a-a0d3cbd212d6
+![Screenshot from 2023-12-05 19-50-12](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/ea4941fc-b386-4941-9d3a-a0d3cbd212d6)
 
 Открываем конфигурационный файл configuration.py и редактируем его:
 
@@ -145,4 +145,7 @@ Cоздадим Playbook для получения серийного номер
 
 #### 5. Вывод
 
-В результате выполнения данной лабораторной работы с помощью Ansible и Netbox была собрана вся возможнуя информация об устройствах и сохранена в отдельном файле.
+В результате выполнения данной лабораторной работы с помощью Ansible и Netbox была собрана вся возможная информация об устройствах и сохранена в отдельном файле.
+
+<img width="374" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/dffdcefc-5dd2-47e1-91c7-b724a8042f89">
+
