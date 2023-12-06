@@ -39,12 +39,15 @@ GRANT ALL PRIVILEGES ON DATABASE netbox TO netbox;
 sudo apt-get install -y redis-server
 ```
 Скачиваем архив netbox
+
 ![Screenshot from 2023-12-05 19-47-54](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/645597fa-6e87-4d9f-99c2-92da634dfe92)
 
 Добавляем пользователя
+
 ![Screenshot from 2023-12-05 19-49-24](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/0be3571d-91a5-40e6-9607-007a990c2e37)
 
 Сгенирируем секретный ключ с помощью библиотеки python
+
 ![Screenshot from 2023-12-05 19-50-12](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/ea4941fc-b386-4941-9d3a-a0d3cbd212d6
 
 Открываем конфигурационный файл configuration.py и редактируем его:
@@ -87,4 +90,55 @@ interfaces: 'True'
 Всю информацию сохраняем в файл nb_inventory_result.yml.
 
 #### 4. Настройка сценариев для обоих CHR.
+Cоздадим Playbook для изменения имени пользователя и ip адреса:
+```
+- name: Set CHR
+  hosts: ungrouped
+  tasks:
+    - name: Set Name
+      community.routeros.command:
+        commands:
+          - /system identity set name="{{interfaces[0].device.name}}"
+    - name: Set IP
+      community.routeros.command:
+        commands:
+        - /ip address add address="{{interfaces[0].ip_addresses[1].address}}" interface="{{interfaces[0].display}}"
+```
+Запускаем playbook и в каждом роутере выведим ip адреса:
+Добавлен интерфейс Lo1 с ip-адресом.
+<img width="218" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/fdf05904-e17f-4617-a635-4d4059cad0a0">
+<img width="236" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/82f10e77-ee7b-4353-a3a5-ed346a5f456c">
 
+Проверим ping до виртуальной машины:
+<img width="324" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/833f4903-3ccb-4f95-89d4-e78dc40b9c49">
+
+Cоздадим Playbook для получения серийного номера CHR и установки его в профиль Netbox
+```
+- name: Serial Numbers
+  hosts: ungrouped
+  tasks:
+    - name: Serial Number
+      community.routeros.command:
+        commands:
+          - /system license print
+      register: license_print
+    - name: Name
+      community.routeros.command:
+        commands:
+          - /system identity print
+      register: identity_print
+    - name: Serial Number to Netbox
+      netbox_device:
+        netbox_url: http://127.0.0.1:8000
+        netbox_token: <API token>
+        data:
+          name: "{{identity_print.stdout_lines[0][0].split(' ').1}}"
+```
+Выполним данный playbook:
+Проверяем заполнение поля Serial Number:
+<img width="329" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/42be1931-0286-470b-be23-9bbac85093c5">
+<img width="306" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/ce83a28b-dfe9-450c-93a9-885940c1b442">
+
+#### 5. Вывод
+
+В результате выполнения данной лабораторной работы с помощью Ansible и Netbox была собрана вся возможнуя информация об устройствах и сохранена в отдельном файле.
