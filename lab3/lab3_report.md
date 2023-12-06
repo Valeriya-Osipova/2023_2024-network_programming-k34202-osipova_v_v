@@ -139,6 +139,7 @@ Cоздадим Playbook для получения серийного номер
 ```
 Выполним данный playbook:
 Проверяем заполнение поля Serial Number:
+
 <img width="329" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/42be1931-0286-470b-be23-9bbac85093c5">
 <img width="306" alt="image" src="https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/ce83a28b-dfe9-450c-93a9-885940c1b442">
 
