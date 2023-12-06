@@ -1,0 +1,11 @@
+- name: Set CHR
+  hosts: ungrouped
+  tasks:
+    - name: Set Name
+      community.routeros.command:
+        commands:
+          - /system identity set name="{{interfaces[0].device.name}}"
+    - name: Set IP
+      community.routeros.command:
+        commands:
+        - /ip address add address="{{interfaces[0].ip_addresses[1].address}}" interface="{{interfaces[0].display}}"

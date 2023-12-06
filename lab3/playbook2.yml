@@ -1,0 +1,19 @@
+- name: Serial Numbers
+  hosts: ungrouped
+  tasks:
+    - name: Serial Number
+      community.routeros.command:
+        commands:
+          - /system license print
+      register: license_print
+    - name: Name
+      community.routeros.command:
+        commands:
+          - /system identity print
+      register: identity_print
+    - name: Serial Number to Netbox
+      netbox_device:
+        netbox_url: http://127.0.0.1:8000
+        netbox_token: <API token>
+        data:
+          name: "{{identity_print.stdout_lines[0][0].split(' ').1}}"

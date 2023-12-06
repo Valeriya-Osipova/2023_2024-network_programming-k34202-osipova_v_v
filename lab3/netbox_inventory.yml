@@ -1,0 +1,9 @@
+---
+plugin: netbox.netbox.nb_inventory
+api_endpoint: https://158.160.48.189
+token: токен
+validate_certs: False
+config_context: False
+group_by:
+  - device_roles
+interfaces: 'True'
