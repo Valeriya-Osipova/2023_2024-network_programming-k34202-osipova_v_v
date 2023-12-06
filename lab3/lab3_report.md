@@ -34,5 +34,57 @@ GRANT ALL PRIVILEGES ON DATABASE netbox TO netbox;
 ```
 ![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/2e51c2fc-286c-4d7d-aea5-cc2b5a1e8ce8)
 
+Установим Redis с помощью команды: 
+```
+sudo apt-get install -y redis-server
+```
+Скачиваем архив netbox
+![Screenshot from 2023-12-05 19-47-54](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/645597fa-6e87-4d9f-99c2-92da634dfe92)
 
+Добавляем пользователя
+![Screenshot from 2023-12-05 19-49-24](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/0be3571d-91a5-40e6-9607-007a990c2e37)
+
+Сгенирируем секретный ключ с помощью библиотеки python
+![Screenshot from 2023-12-05 19-50-12](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/ea4941fc-b386-4941-9d3a-a0d3cbd212d6
+
+Открываем конфигурационный файл configuration.py и редактируем его:
+
+Укажем параметры: ALLOWED_HOSTS, DATABASE и SECRET_KEY.
+
+![Screenshot from 2023-12-05 19-52-11](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/3cd885e4-f0ad-4d9f-bdb5-91dd5c45366a)
+
+Внутри вирутального окружения python был создан superuser для дальнейшего управления netbox. 
+```
+python3 manage.py createsuperuser
+```
+Соберем статистику с помощью команды:
+```
+python3 manage.py collectstatic --no-input
+```
+Установим Ansible модули для Netbox. Для возможности запуска netbox были сконфигурированы nginx и gunicorn.
+Добавим хост в файл nginx.conf.
+
+#### 2. Заполнение инфомации о CHR
+
+Переходим по ip адресу виртуальной машины и видим интерфейс Netbox:
+![5-5](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/182696fa-6d62-4f68-8bc9-9e1008988237)
+
+Добавляем устройства CH1 и CH2 и внесем информацию об интерфесах и IP-адресах:
+![6](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/181b56cf-0989-4b4f-ac0d-5908aa90a2a8)
+
+#### 3. Сбор данных Netbox
+Сохраним данные из Netbox в отдельный файл netbox_inventory.yml с использованием модуля netbox.netbox.nb_inventory в Ansible.
+```
+plugin: netbox.netbox.nb_inventory
+api_endpoint: https://51.250.29.83
+token: токен
+validate_certs: False
+config_context: False
+group_by:
+  - device_roles
+interfaces: 'True'
+```
+Всю информацию сохраняем в файл nb_inventory_result.yml.
+
+#### 4. Настройка сценариев для обоих CHR.
 
