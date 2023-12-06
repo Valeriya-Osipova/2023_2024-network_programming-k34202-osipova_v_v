@@ -23,4 +23,16 @@ Date of finished:
 
 ### Ход работы
 
-#### 1. 
+#### 1. Устанавливаем Netbox
+Сначала установим postgresql и подключимся к нему. 
+Также создадим базу данных с помощью команд 
+```
+CREATE DATABASE netbox;
+CREATE USER netbox WITH PASSWORD 'PstPass';
+GRANT ALL PRIVILEGES ON DA;
+GRANT ALL PRIVILEGES ON DATABASE netbox TO netbox;
+```
+![image](https://github.com/Valeriya-Osipova/2023_2024-network_programming-k34202-osipova_v_v/assets/64967406/2e51c2fc-286c-4d7d-aea5-cc2b5a1e8ce8)
+
+
+
